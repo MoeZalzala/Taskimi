@@ -1,13 +1,13 @@
 package com.grape.taskimi.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Note_table")
+@Entity(tableName = "Note_Table")
 data class Note (
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
-    val noteTitle: String,
-    val noteDescription: String,
-    val isImportant: Boolean
+    @PrimaryKey(autoGenerate = true) val id:Long,
+    @ColumnInfo(name = "Content") val content: String,
+    @ColumnInfo(name = "Date") val date: String,
+    @ColumnInfo(name = "Important") val important: Boolean
 )
