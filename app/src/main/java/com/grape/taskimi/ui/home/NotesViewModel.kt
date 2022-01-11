@@ -30,6 +30,7 @@ class NotesViewModel : ViewModel(), NoteInteractionListener {
             newNotesText.value?.let {
                 repository.insertNewNote(Note(0, it,GetDate.getCurrentDate(), false))
                 }
+            newNotesText.value = ""
             }
         }
     fun loadData(){
