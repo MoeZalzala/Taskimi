@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.grape.taskimi.data.Note
 import com.grape.taskimi.data.repository.NoteRepository
+import com.grape.taskimi.util.GetDate
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -27,7 +28,7 @@ class NotesViewModel : ViewModel(), NoteInteractionListener {
     fun addNote(){
         viewModelScope.launch {
             newNotesText.value?.let {
-                repository.insertNewNote(Note(0, it,"2021/1/1", false))
+                repository.insertNewNote(Note(0, it,GetDate.getCurrentDate(), false))
                 }
             }
         }
